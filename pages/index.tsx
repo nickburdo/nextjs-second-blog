@@ -1,10 +1,16 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout, { siteTitle } from '../components/layout';
 import { getStoredPostData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.css';
+import { PostData } from '../types';
 
-export default function Home({ allPostsData }) {
+interface Props {
+  allPostsData: PostData[];
+}
+
+export default function Home({ allPostsData }: Props) {
   return (
     <Layout home>
       <Head>
